@@ -1,0 +1,33 @@
+<div *ngIf="DisplayMode =='info'" >
+    <div class="importantInfo">
+        <h1 class="infotext" style="font-size: 45px;top:30px;" > {{ElementDisplayed.name}} </h1>
+        <h3 class="infotext"style="font-size: 45px;left:90px;top:20px;"   > {{ElementDisplayed.lastName}} </h3>
+        <h3 class="infotext"style="font-size: 45px;bottom: 80px;left:73%"   > Rating </h3>
+         <h3 class="infotext"style="font-size: 70px;bottom:100px;left:75%"  > {{ElementDisplayed.rating}} </h3>
+    </div>
+    <h1 class="infotext" style="top : 30px;font-size: 50px;">GPA</h1>
+    <h1 class="infotext" style="color:#305974;top:20px;left:120px;font-size: 50px;">{{ElementDisplayed.gpa}}</h1>
+    <h1 class="infotext" style="bottom:110px;left:380px;font-size: 50px;">Level</h1>
+    <h1 class="infotext" style="bottom: 120px;left:350px; color:#305974;font-size: 45px;">{{ElementDisplayed.level}}</h1>
+    <h1 class="infotext" style="bottom: 240px;left:700px;font-size: 45px;">Speciality</h1>
+    <h1 class="infotext" style="bottom: 250px;left:700px;height:30px;color:#305974;font-size: 45px;">{{ElementDisplayed.field}}</h1>
+    
+    <div class="available">
+        <h1 class="infotext" style ="top:2px;left : 250px;">Available Notes</h1>;
+        <button class="courseButton"*ngFor ="let element of ElementDisplayed.course">
+           <h5 class="student">{{element}}</h5> 
+           <i class="material-icons" style="color:white; font-size:35px;">cloud_download</i>
+
+        </button>
+    </div>
+
+</div>
+
+ <div *ngIf="DisplayMode =='Button'">
+      <button class="button"  *ngFor= "let element of contentDisplayed" (click)="DisplayElementInfo(element.id)"> 
+          <h5 class='buttonDetails' style="position:relative;top:10px;" >{{element.name}}</h5>      
+          <h5 style ='position:relative;bottom:25px;left:200px;' class='buttonDetails'>{{element.lastName}}</h5> 
+          <h5  style ='position:relative; bottom:60px;left : 700px;' class='buttonDetails'>Rating : </h5>   
+          <h5  style ='position:relative;bottom:9px;left : 900px;' class='buttonDetails'>{{element.rating}}</h5>                     
+    </button>
+</div>

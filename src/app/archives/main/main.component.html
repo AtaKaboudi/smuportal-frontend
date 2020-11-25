@@ -1,0 +1,56 @@
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>
+  
+  <body >
+
+    <app-navbar></app-navbar>
+    
+    <h1 class="title">Welcome to archives</h1>
+  
+  
+  
+  <div class="container" style ="width: 1350px;top:40px;height: 250px; ">
+       <div class ="horizontalBar">
+         <button  class="DisplayContentButton"  style ="right:80%;  "(click)="Displaycourses()" >Course</button>
+         <button class ="DisplayContentButton" style ="right:50%;  "(click)="Displayprofessor()">Professor</button>     
+         <button class= "DisplayContentButton" style ="right:65%;  "(click)="Displaystudent()">Student</button>
+        <button class ="DisplayContentButton "style="right: 35%; " (click)="DisplayChat()">Chat</button>
+        <i class="material-icons" style="color:white;position:absolute;right:80%;top:2px ">keyboard_arrow_down</i>
+        <i class="material-icons" style="color:white;position:absolute;right:50%;top:2px ">keyboard_arrow_down</i>
+        <i class="material-icons" style="color:white;position:absolute;right:65%;top:2px ">keyboard_arrow_down</i>
+        <i class="material-icons" style="color:white;position:absolute;right:35%;top:2px ">keyboard_arrow_down</i>
+        <form >
+          <input class="searchForm" type="text" (keyup)="onKey($event)" >
+       </form>
+       <button  style="position:absolute;height:20px;border:none;width:max-content;top:5px;border-radius:0px;right:5px;background-color:#555555;"(click)="Search()" >
+        <i class="material-icons" style="font-size: 22px;color: white;">search</i>
+      </button>
+     
+      </div>
+  
+  
+  
+        <div class="mainBlockContainer">
+          <div *ngIf ="DisplayMode =='Button'">
+          <div *ngIf ="DisplayedContent =='Course'" class="btn-group">
+            <app-course></app-course>
+          </div> 
+          <div *ngIf ="DisplayedContent =='Student'" class="btn-group">
+            <app-student></app-student>
+          </div>
+          <div *ngIf ="DisplayedContent =='Professor'" class="btn-group">
+            <app-professor></app-professor>
+          </div>
+        </div>
+  
+          <div *ngIf ="DisplayMode =='Chat'" >
+          <app-chat></app-chat>
+          </div>
+  
+           
+              
+        </div>
+  </div>
+  
+  </body>

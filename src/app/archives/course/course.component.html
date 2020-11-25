@@ -1,0 +1,51 @@
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>
+  
+
+
+<div *ngIf="DisplayMode =='info'">
+    <div class="importantInfo">
+        <h1 class="infotext" style="top:10px; font-size: 90px" > {{ElementDisplayed.name}} </h1>
+        <h3 class="infotext" style="top:12px;font-size: 30px;"   > {{ElementDisplayed.lastName}} </h3>
+        <h3 class="infotext" style="bottom:120px;font-size: 45px;left:70%"   > Credits </h3>
+        <h3 class="infotext" style="bottom:130px;font-size: 60px;left:75%"  > {{ElementDisplayed.credits}} </h3>
+    </div>
+    <div class="secondaryInfo">
+         <h1 class="infotext" style ="top: 10px;left : 20px;">Success Rate</h1>
+         <h1 class="infotext" style="top:10px;left : 35%;font-size :70px; color: #305974">{{ElementDisplayed.successrate}}</h1>
+         <h1 class="infotext" style="left : 75%;font-size:20px; ">%</h1>
+         <h1 class="infotext" style ="left : 20px;">Review Time </h1>
+         <h1 class="infotext" style=" left: 40%;font-size:60px; color: #305974">{{ElementDisplayed.reviewtime}}</h1>
+         <h1 class="infotext" style="bottom:75px;left : 60%;font-size:18px; ">days</h1>
+         <h1 class="infotext" style ="left : 20px;">Last Update </h1>
+         <h1 class="infotext" style="left : 40%;font-size:60px; color: #305974">{{ElementDisplayed.lastUpdate}}</h1>
+        </div>
+
+        <div class="available">
+            <h1 class="infotext" style ="top:2px;left : 5px;">Available Notes</h1>;
+            <button class="courseButton"*ngFor ="let element of ElementDisplayed.availablenotes">
+               <h5 class="student">{{element}}</h5> 
+               <i class="material-icons" style="color:white; font-size:55px;">cloud_download</i>
+
+            </button>
+        </div>
+
+    <div class="commentContainer">
+        <h1 class ="infotext" style="top:10px;left:0%">Comments </h1>
+        <h1  class="comments" *ngFor ='let element of ElementDisplayed.comments'>{{element}}</h1>
+    </div>
+
+</div>
+
+
+
+<div *ngIf="DisplayMode =='Button'" >
+    <button class="button"  *ngFor= "let element of contentDisplayed" (click)="DisplayElementInfo(element.id)"> 
+        <h5 style ='position:relative;top:10px;'class='buttonDetails'>{{element.name}}</h5>      
+        <h5 style ='position:relative;bottom:25px;left:200px;' class='buttonDetails'>{{element.lastName}}</h5> 
+        <h5  style ='position:relative; bottom:60px;left : 700px;' class='buttonDetails'>Credits : </h5>   
+        <h5  style ='position:relative;bottom:9px;left : 900px;' class='buttonDetails'>{{element.credits}}</h5>     
+    </button>
+</div>

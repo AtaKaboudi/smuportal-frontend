@@ -15,10 +15,12 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from "./app.component";
 import { AppService } from "./shared";
 import { ApplicationsModule } from "./applications/applications.module";
+import { ArchivesModule} from "./archives/archives.module"
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    ArchivesModule,
     BrowserModule,
     BrowserAnimationsModule,
     NgbModule,
