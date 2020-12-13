@@ -19,4 +19,10 @@
     "iconUrl": "users.png",
     "path": "/apps/admin"
   }
+  ,
+  {
+    "appName": "Archives",
+    "iconUrl": "Archives.png",
+    "path": "/archives"
+  }
 ]

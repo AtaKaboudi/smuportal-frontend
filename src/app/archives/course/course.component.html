@@ -35,6 +35,16 @@
     <div class="commentContainer">
         <h1 class ="infotext" style="top:10px;left:0%">Comments </h1>
         <h1  class="comments" *ngFor ='let element of ElementDisplayed.comments'>{{element}}</h1>
+        <input  (keyup)="onKey($event)" style=" left : 50%;width : 500px;">
+        <button style =" width:100px;"(click)="addComment()">Submit</button>
+        <h1 style ="position :relative; top : 30px;width : 100px;"> Rate </h1>
+        <button style ="position: relative;left:100px;bottom: 30px;">
+        <i class="material-icons" style="position:flex;color:black; font-size:55px;">keyboard_arrow_down</i>
+         </button>
+         <button style ="position: relative;left:120px;bottom: 30px;">
+        <i class="material-icons" style="color:black; font-size:55px;">keyboard_arrow_up</i>
+         </button>
+
     </div>
 
 </div>

@@ -4,4 +4,6 @@
 <div class="messageContainer">
 <button *ngFor='let element of messages' class="messageButton">{{element}}</button>
 </div>
-<input type="text" class="chatTextInput" >
+<input type="text" (keyup)="onKey($event)"  class="chatTextInput" >
+<button style ="position:absolute; top:405px;right : 170px;width:100px;"(click)="addComment()">Submit</button>
+

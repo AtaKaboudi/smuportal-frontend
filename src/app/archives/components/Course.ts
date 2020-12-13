@@ -32,5 +32,9 @@ Course.Courses[Course.Courses.length]=a;
  static getElement(a){
     return Course.Courses[a];
 }
+ addComment(a){
+    this.comments.push(a);
+
+}
 
 }

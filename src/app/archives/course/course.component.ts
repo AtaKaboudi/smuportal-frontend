@@ -7,6 +7,7 @@ import { Course } from '../components/Course';
   styleUrls: ['./course.component.css']
 })
 export class CourseComponent implements OnInit {
+  currentComment = '';
   constructor() { this.DisplayMode = "Button" ;}
   ElementDisplayed ;
    DisplayMode: String;
@@ -17,7 +18,14 @@ export class CourseComponent implements OnInit {
      this.ElementDisplayed = Course.Courses[a];
      console.log(this.ElementDisplayed.comments)
   }
-  
+
+ 
+  onKey(event) {
+    this.currentComment = event.target.value;
+   }
+  addComment(){
+    this.ElementDisplayed.addComment(this.currentComment);
+  }
 
 
  

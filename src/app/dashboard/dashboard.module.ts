@@ -10,7 +10,6 @@ import { ListOfFeaturesComponent } from './list-of-features';
 import { WelcomeUserComponent } from './welcome-user';
 import { SharedModule } from '../shared/shared.module';
 
-
 const routes: Routes = [
  {
    path: 'dashboard',
